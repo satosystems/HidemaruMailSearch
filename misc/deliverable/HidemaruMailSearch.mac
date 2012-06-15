@@ -1,0 +1,16 @@
+if (platform & 0x00080000 == 0x00080000) {
+	$bit = "64";
+} else {
+	$bit = "32";
+}
+loaddll macrodir + "\\HidemaruMailSearch" + $bit + ".dll";
+
+$selectedText = "";
+
+if (selecting) {
+	$selectedText = gettext(seltopx, seltopy, selendx, selendy, 1);
+}
+
+#n = dllfunc("search", $selectedText);
+
+freedll;
